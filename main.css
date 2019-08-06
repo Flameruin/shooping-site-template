@@ -1,0 +1,8 @@
+/* Move down content because we have a fixed navbar */
+body {
+  padding-top: 4rem;
+}
+
+.navbar{
+  min-width: 155px;
+}
