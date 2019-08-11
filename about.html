@@ -80,6 +80,9 @@
      
     
     <script>
+        var itemCount = sessionStorage.getItem("cartItemNumber");
+        document.getElementById("cartItemNumber").innerHTML = itemCount;
+
         addYear(document.getElementById("copyrightDate"));
         function addYear(element) {
             var d = new Date();

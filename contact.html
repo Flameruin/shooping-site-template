@@ -72,11 +72,11 @@
                         <a class="nav-link active" href="#" aria-disabled="true">Contact <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>  
+                <a class="btn btn-outline-primary btn-sm ml-3" href="cart.html">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cartItemNumber" class="badge badge-pill badge-info"></span>
+                </a>
             </div>
-            <a class="btn btn-outline-primary btn-sm ml-3" href="cart.html">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cartItemNumber" class="badge badge-pill badge-info"></span>
-            </a>
         </nav>
         <main role="main" class="container-fluid col-11 col-sm-11 col-md-9 col-xl-6  py-md-3 pl-md-5 ml-sm-auto  bd-content">
             <h1>Contact Us</h1>
@@ -125,6 +125,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
+        var itemCount = sessionStorage.getItem("cartItemNumber");
+        document.getElementById("cartItemNumber").innerHTML = itemCount;
+
         addYear(document.getElementById("copyrightDate"));
         function addYear(element) {
             var d = new Date();
