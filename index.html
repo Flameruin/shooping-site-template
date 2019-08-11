@@ -27,8 +27,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
-     <!-- FontAwesome kit -->
-     <script src="https://kit.fontawesome.com/7f621c95f0.js"></script>
+    <!-- FontAwesome kit -->
+    <script src="https://kit.fontawesome.com/7f621c95f0.js"></script>
+     <!-- https://datatables.net kit for better tables-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/fh-3.1.4/kt-2.5.0/r-2.2.2/datatables.min.css"/>
   </head>
   <!-- h-100 makes sre the html takes the full height of page (this was done to make footer at bottom) -->
   <body class="d-flex flex-column h-100">
@@ -60,23 +62,23 @@
             </div>
         </nav>
         <main role="main" class="col-11 col-sm-9 col-md-10 col-xl-10 py-3 pl-5 bd-content ml-sm-5">
-                <div class="card">
-                        <table class="table table-hover shopping-cart-wrap">
+                        <table  id="productTable" class="table table-hover table-bordered shopping-cart-wrap">
                         <thead class="text-muted">
                             <tr>
                             <th scope="col">Product</th>
+                            <th scope="col" width="120">Category</th>
                             <th scope="col" width="120">Price</th>
                             <th scope="col" width="120">Quantity</th>
                             <th scope="col" class="text-right" width="200">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr >
                                 <td>
-                                    <figure class="media">
-                                        <div class="img-wrap"><img src="img/products/canon.png" class="img-thumbnail img-sm"></div>
-                                        <figcaption class="media-body">
-                                            <h6 class="title text-truncate">Canon camera</h6>
+                                    <div class="media">
+                                        <div class="img-wrap"><img src="img/products/canon.png" class="img-fluid" width="130" height="130"></div>
+                                        <figcaption class="media-body mx-3">
+                                            <h6 class="title">Canon camera</h6>
                                             <dl class="dlist-inline small">
                                             <dt>Size: </dt>
                                             <dd>XXL</dd>
@@ -86,8 +88,9 @@
                                             <dd>Black</dd>
                                             </dl>
                                         </figcaption>
-                                    </figure> 
+                                    </div> 
                                 </td>
+                                <td>Camera</td>
                                 <td> 
                                     <div class="price-wrap"> 
                                         <var class="price">$145</var> 
@@ -97,156 +100,254 @@
                                 <td> 
                                     <select class="form-control">
                                             <option>1</option>
-                                            <option>2</option>	
-                                            <option>3</option>	
-                                            <option>4</option>	
                                     </select> 
                                 </td>
                                 <td class="text-right"> 
                                     <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
-                                    <a href="#" class="btn btnAddToCart btn-success"> <i class="fas fa-cart-plus"></i></i> Add to cart</a>
+                                    <a href="#!" class="btn btnAddToCart btn-success"> <i class="fas fa-cart-plus"></i></i> Add to cart</a>
                                 </td>
                             </tr>
-                            <tr>
-                                    <td>
-                                            <div class="col-lg-4 col-md-6 mb-4">
-                                        <div class="card h-100">
-                                            <a href="#"><img class="img-thumbnail img-sm" src="img/products/deodorant_PNG52.png" alt=""></a>
-                                            <div class="card-body">
-                                                <h4 class="card-title">
-                                                <a href="#">Item One</a>
-                                                </h4>
-                                                <h5>$24.99</h5>
-                                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                                            </div>
-                                            <div class="card-footer">
-                                                <small class="text-muted">★ ★ ★ ★ ☆</small>
-                                            </div>
-                                        </div></div>
-                                    </td>
-                                    <td> 
-                                        <div class="price-wrap"> 
-                                            <var class="price">$145</var> 
-                                            <small class="text-muted">(USD)</small> 
-                                        </div> <!-- price-wrap .// -->
-                                    </td>
-                                    <td> 
-                                        <select class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>	
-                                                <option>3</option>	
-                                                <option>4</option>	
-                                        </select> 
-                                    </td>
-                                    <td class="text-right"> 
-                                        <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
-                                        <a href="#" class="btn btnAddToCart btn-success"> <i class="fas fa-cart-plus"></i></i> Add to cart</a>
-                                    </td>
-                                </tr>
-
+                            <tr >
+                              <td>
+                                  <div class="media">
+                                      <div class="img-wrap"><img src="img/products/shampoo_PNG52.png" class="img-fluid" width="130" height="130"></div>
+                                      <figcaption class="media-body mx-3">
+                                          <h6 class="title">Canon camera</h6>
+                                          <dl class="dlist-inline small">
+                                          <dt>Size: </dt>
+                                          <dd>XXL</dd>
+                                          </dl>
+                                          <dl class="dlist-inline small">
+                                          <dt>Color: </dt>
+                                          <dd>Black</dd>
+                                          </dl>
+                                      </figcaption>
+                                  </div> 
+                              </td>
+                              <td>Hygeine</td>
+                              <td> 
+                                  <div class="price-wrap"> 
+                                      <var class="price">$145</var> 
+                                      <small class="text-muted">(USD)</small> 
+                                  </div> <!-- price-wrap .// -->
+                              </td>
+                              <td> 
+                                  <select class="form-control">
+                                          <option>1</option>
+                                  </select> 
+                              </td>
+                              <td class="text-right"> 
+                                  <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
+                                  <a href="#!" class="btn btnAddToCart btn-success"> <i class="fas fa-cart-plus"></i></i> Add to cart</a>
+                              </td>
+                              </tr>
+                              <tr >
+                                <td>
+                                    <div class="media">
+                                        <div class="img-wrap"><img src="img/products/washing_powder_PNG35.png" class="img-fluid" width="130" height="130"></div>
+                                        <figcaption class="media-body mx-3">
+                                            <h6 class="title">Canon camera</h6>
+                                            <dl class="dlist-inline small">
+                                            <dt>Size: </dt>
+                                            <dd>XXL</dd>
+                                            </dl>
+                                            <dl class="dlist-inline small">
+                                            <dt>Color: </dt>
+                                            <dd>Black</dd>
+                                            </dl>
+                                        </figcaption>
+                                    </div> 
+                                </td>
+                                <td>Hygeine</td>
+                                <td> 
+                                    <div class="price-wrap"> 
+                                        <var class="price">$145</var> 
+                                        <small class="text-muted">(USD)</small> 
+                                    </div> <!-- price-wrap .// -->
+                                </td>
+                                <td> 
+                                    <select class="form-control">
+                                            <option>1</option>
+                                    </select> 
+                                </td>
+                                <td class="text-right"> 
+                                    <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
+                                    <a href="#!" class="btn btnAddToCart btn-success"> <i class="fas fa-cart-plus"></i></i> Add to cart</a>
+                                </td>
+                            </tr>
+                            <tr >
+                              <td>
+                              <div class="media">
+                                  <div class="img-wrap"><img src="img/products/shampoo_PNG36.png" class="img-fluid" width="130" height="130"></div>
+                                  <figcaption class="media-body mx-3">
+                                      <h6 class="title">Canon camera</h6>
+                                      <dl class="dlist-inline small">
+                                      <dt>Size: </dt>
+                                      <dd>XXL</dd>
+                                      </dl>
+                                      <dl class="dlist-inline small">
+                                      <dt>Color: </dt>
+                                      <dd>Black</dd>
+                                      </dl>
+                                  </figcaption>
+                              </div> 
+                          </td>
+                          <td>Hygeine</td>
+                          <td> 
+                              <div class="price-wrap"> 
+                                  <var class="price">$145</var> 
+                                  <small class="text-muted">(USD)</small> 
+                              </div> <!-- price-wrap .// -->
+                          </td>
+                          <td> 
+                              <select class="form-control">
+                                      <option>1</option>
+                              </select> 
+                          </td>
+                          <td class="text-right"> 
+                              <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
+                              <a href="#!" class="btn btnAddToCart btn-success"> <i class="fas fa-cart-plus"></i></i> Add to cart</a>
+                          </td>
+                      </tr>                         
+                       <tr >
+                        <td>
+                            <div class="media">
+                                <div class="img-wrap"><img src="img/products/washing_powder_PNG38.png" class="img-fluid" width="130" height="130"></div>
+                                <figcaption class="media-body mx-3">
+                                    <h6 class="title">Canon camera</h6>
+                                    <dl class="dlist-inline small">
+                                    <dt>Size: </dt>
+                                    <dd>XXL</dd>
+                                    </dl>
+                                    <dl class="dlist-inline small">
+                                    <dt>Color: </dt>
+                                    <dd>Black</dd>
+                                    </dl>
+                                </figcaption>
+                            </div> 
+                        </td>
+                        <td>Hygeine</td>
+                        <td> 
+                            <div class="price-wrap"> 
+                                <var class="price">$145</var> 
+                                <small class="text-muted">(USD)</small> 
+                            </div> <!-- price-wrap .// -->
+                        </td>
+                        <td> 
+                            <select class="form-control">
+                                    <option>1</option>
+                            </select> 
+                        </td>
+                        <td class="text-right"> 
+                            <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
+                            <a href="#!" class="btn btnAddToCart btn-success"> <i class="fas fa-cart-plus"></i></i> Add to cart</a>
+                        </td>
+                    </tr>
+                    <tr >
+                      <td>
+                          <div class="media">
+                              <div class="img-wrap"><img src="img/products/deodorant_PNG52.png" class="img-fluid" width="130" height="130"></div>
+                              <figcaption class="media-body mx-3">
+                                  <h6 class="title">Canon camera</h6>
+                                  <dl class="dlist-inline small">
+                                  <dt>Size: </dt>
+                                  <dd>XXL</dd>
+                                  </dl>
+                                  <dl class="dlist-inline small">
+                                  <dt>Color: </dt>
+                                  <dd>Black</dd>
+                                  </dl>
+                              </figcaption>
+                          </div> 
+                      </td>
+                      <td>Hygeine</td>
+                      <td> 
+                          <div class="price-wrap"> 
+                              <var class="price">$145</var> 
+                              <small class="text-muted">(USD)</small> 
+                          </div> <!-- price-wrap .// -->
+                      </td>
+                      <td> 
+                          <select class="form-control">
+                                  <option>1</option>
+                          </select> 
+                      </td>
+                      <td class="text-right"> 
+                          <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
+                          <a href="#!" class="btn btnAddToCart btn-success"> <i class="fas fa-cart-plus"></i></i> Add to cart</a>
+                      </td>
+                  </tr>
+                  <tr >
+                    <td>
+                        <div class="media">
+                            <div class="img-wrap"><img src="img/products/deodorant_PNG55.png" class="img-fluid" width="130" height="130"></div>
+                            <figcaption class="media-body mx-3">
+                                <h6 class="title">Canon camera</h6>
+                                <dl class="dlist-inline small">
+                                <dt>Size: </dt>
+                                <dd>XXL</dd>
+                                </dl>
+                                <dl class="dlist-inline small">
+                                <dt>Color: </dt>
+                                <dd>Black</dd>
+                                </dl>
+                            </figcaption>
+                        </div> 
+                    </td>
+                    <td>Hygeine</td>
+                    <td> 
+                        <div class="price-wrap"> 
+                            <var class="price">$145</var> 
+                            <small class="text-muted">(USD)</small> 
+                        </div> <!-- price-wrap .// -->
+                    </td>
+                    <td> 
+                        <select class="form-control">
+                                <option>1</option>
+                        </select> 
+                    </td>
+                    <td class="text-right"> 
+                        <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
+                        <a href="#!" class="btn btnAddToCart btn-success"> <i class="fas fa-cart-plus"></i></i> Add to cart</a>
+                    </td>
+                </tr>
+                <tr >
+                  <td>
+                      <div class="media">
+                          <div class="img-wrap"><img src="img/products/deodorant_PNG70.png" class="img-fluid" width="130" height="130"></div>
+                          <figcaption class="media-body mx-3">
+                              <h6 class="title">Canon camera</h6>
+                              <dl class="dlist-inline small">
+                              <dt>Size: </dt>
+                              <dd>XXL</dd>
+                              </dl>
+                              <dl class="dlist-inline small">
+                              <dt>Color: </dt>
+                              <dd>Black</dd>
+                              </dl>
+                          </figcaption>
+                      </div> 
+                  </td>
+                  <td>Hygeine</td>
+                  <td> 
+                      <div class="price-wrap"> 
+                          <var class="price">$145</var> 
+                          <small class="text-muted">(USD)</small> 
+                      </div> <!-- price-wrap .// -->
+                  </td>
+                  <td> 
+                      <select class="form-control">
+                              <option>1</option>
+                      </select> 
+                  </td>
+                  <td class="text-right"> 
+                      <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
+                      <a href="#!" class="btn btnAddToCart btn-success"> <i class="fas fa-cart-plus"></i></i> Add to cart</a>
+                  </td>
+              </tr>
                         </tbody>
                         </table>
-                        </div>
-                <div class="container">
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                          <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="img/products/canon.png" alt=""></a>
-                            <div class="card-body">
-                              <h4 class="card-title">
-                                <a href="#">Item One</a>
-                              </h4>
-                              <h5>$24.99</h5>
-                              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                              <small class="text-muted">★ ★ ★ ★ ☆</small>
-                            </div>
-                          </div>
-                        </div>
-              
-                        <div class="col-lg-4 col-md-6 mb-4">
-                          <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                              <h4 class="card-title">
-                                <a href="#">Item Two</a>
-                              </h4>
-                              <h5>$24.99</h5>
-                              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                            </div>
-                            <div class="card-footer">
-                              <small class="text-muted">★ ★ ★ ★ ☆</small>
-                            </div>
-                          </div>
-                        </div>
-              
-                        <div class="col-lg-4 col-md-6 mb-4">
-                          <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                              <h4 class="card-title">
-                                <a href="#">Item Three</a>
-                              </h4>
-                              <h5>$24.99</h5>
-                              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                              <small class="text-muted">★ ★ ★ ★ ☆</small>
-                            </div>
-                          </div>
-                        </div>
-              
-                        <div class="col-lg-4 col-md-6 mb-4">
-                          <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                              <h4 class="card-title">
-                                <a href="#">Item Four</a>
-                              </h4>
-                              <h5>$24.99</h5>
-                              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                              <small class="text-muted">★ ★ ★ ★ ☆</small>
-                            </div>
-                          </div>
-                        </div>
-              
-                        <div class="col-lg-4 col-md-6 mb-4">
-                          <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                              <h4 class="card-title">
-                                <a href="#">Item Five</a>
-                              </h4>
-                              <h5>$24.99</h5>
-                              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                            </div>
-                            <div class="card-footer">
-                              <small class="text-muted">★ ★ ★ ★ ☆</small>
-                            </div>
-                          </div>
-                        </div>
-              
-                        <div class="col-lg-4 col-md-6 mb-4">
-                          <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                              <h4 class="card-title">
-                                <a href="#">Item Six</a>
-                              </h4>
-                              <h5>$24.99</h5>
-                              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                              <small class="text-muted">★ ★ ★ ★ ☆</small>
-                            </div>
-                          </div>
-                        </div>
-              
-                    </div>
-                <nav aria-label="Page navigation">
+                <!-- <nav aria-label="Page navigation">
                     <ul class="pagination justify-content-center">
                         <li class="page-item disabled">
                             <span  class="page-link" href="#" aria-label="First">
@@ -276,52 +377,61 @@
                             </a>
                         </li>
                     </ul>
-                </nav>                      
+                </nav>                       -->
         </main>
+  </body> 
         <!-- mt-auto makes sure footer top margin will be full making it go to bottom of page -->
         <footer class="footer  footer mt-sm-auto px-4">
             <p class="lead">&copy;&nbsp;Company Name <i id="copyrightDate">2019-</i></p>
         </footer>
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS , then datatables.min.js -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-     
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/fh-3.1.4/kt-2.5.0/r-2.2.2/datatables.min.js"></script> 
     
     <script>
         var itemCount = sessionStorage.getItem("cartItemNumber");
         document.getElementById("cartItemNumber").innerHTML = itemCount;
-        
+
         addYear(document.getElementById("copyrightDate"));
         function addYear(element) {
             var d = new Date();
             element.innerHTML += d.getFullYear();
         };
-
-        function addProduct(target) {
-            // this is just a product placeholder
-            var productAdded = '<li class="cd-cart__product"><div class="cd-cart__image"><a href="#0"><img src="assets/img/product-preview.png" alt="placeholder"></a></div><div class="cd-cart__details"><h3 class="truncate"><a href="#0">Product Name</a></h3><span class="cd-cart__price">$25.99</span><div class="cd-cart__actions"><a href="#0" class="cd-cart__delete-item">Delete</a><div class="cd-cart__quantity"><label for="cd-product-'+ productId +'">Qty</label><span class="cd-cart__select"><select class="reset" id="cd-product-'+ productId +'" name="quantity"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select><svg class="icon" viewBox="0 0 12 12"><polyline fill="none" stroke="currentColor" points="2,4 6,8 10,4 "/></svg></span></div></div></div></li>';
-            cartList.insertAdjacentHTML('beforeend', productAdded);
-        };
-        // updates the total item number of cart
-        function updateCartTotal()
-        {
+        // table pagenition
+        $(document).ready(function(){
+            $('#productTable').dataTable({
+              // "dom": 'flptip',
+              "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]]
+            });
+        });
+        // updates the total item number of cart on btnAddToCart click
+        $('.btnAddToCart').on('click', function(updateCartTotal) {
             itemCount++;
             document.getElementById("cartItemNumber").innerHTML = itemCount;
             sessionStorage.setItem("cartItemNumber", itemCount);
-            // cartTotal.innerText=bool?(Number(cartTotal.innerText)+Number(price)).toFixed(2):(Number(cartTotal.innerText)-Number(price)).toFixed(2);
-        };
-           
-        // add onClick event listener to all btns of class btnAddToCart for function updateCartTotal
-        var classname = document.getElementsByClassName("btnAddToCart");
+        });
 
-        for (var i = 0; i < classname.length; i++) {
-            classname[i].addEventListener('click', updateCartTotal, false);
-        };
-       
-        // var d = new Date()
-        // document.getElementById("copyrightDate").innerHTML += d.getFullYear();
-    </script>
+
+        /* jQuery does the same easier
+        // // updates the total item number of cart
+        // function updateCartTotal()
+        // {
+        //     itemCount++;
+        //     document.getElementById("cartItemNumber").innerHTML = itemCount;
+        //     sessionStorage.setItem("cartItemNumber", itemCount);
+        //     // cartTotal.innerText=bool?(Number(cartTotal.innerText)+Number(price)).toFixed(2):(Number(cartTotal.innerText)-Number(price)).toFixed(2);
+        // };
+           
+        // // add onClick event listener to all btns of class btnAddToCart for function updateCartTotal
+        // var classname = document.getElementsByClassName("btnAddToCart");
+
+        // for (var i = 0; i < classname.length; i++) {
+        //     classname[i].addEventListener('click', updateCartTotal, false);
+        // };
+        */
+</script>
 </body>
 </html>
