@@ -1,0 +1,297 @@
+<!doctype html>
+<!-- h-100 makes sre the html takes the full height of page (this was done to make footer at bottom) -->
+<html lang="eng" class="h-100">
+  <head>
+    <title>Home Page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- favicon - the site icon in the browser tabs -->
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <!-- <link rel="manifest" href="manifest.json"> -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+     <!-- FontAwesome kit -->
+     <script src="https://kit.fontawesome.com/7f621c95f0.js"></script>
+     <!-- google recaptcha -->
+     <!-- <script src='https://www.google.com/recaptcha/api.js'></script>
+     <script type="text/javascript">
+        var verifyCallback = function(response) {
+          alert(response);
+        };
+        var widgetId1;
+        var widgetId2;
+        var onloadCallback = function() {
+          // Renders the HTML element with id 'example1' as a reCAPTCHA widget.
+          // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
+          grecaptcha.render('example3', {
+            'sitekey' : '6Ldja7IUAAAAANS3KVyjcl0LmgAqzWry8qBXBFgs',
+            'callback' : verifyCallback,
+            'theme' : 'dark'
+          });
+        };
+      </script> -->
+  </head>
+  <!-- h-100 makes sre the html takes the full height of page (this was done to make footer at bottom) -->
+  <body class="d-flex flex-column h-100">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+
+            <img class="navbar-brand" src="img/logo.png" width="48px" height="48px" alt="logo">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                
+            <div class="collapse navbar-collapse " id="navbarLinks">
+                <!-- justify-content-end + ml-auto aligns content to end (right)
+                m - margin l - left -->
+                <ul class="navbar-nav ml-auto justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="contact.html" aria-disabled="true">Contact <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul> 
+                <a class="btn btn-outline-primary btn-sm ml-3 active" href="#">
+                    <i class="fas fa-shopping-cart">Cart</i>
+                    <span id="cartItemNumber" class="badge badge-pill badge-info"></span>
+                </a> 
+            </div>
+        </nav>
+        <main role="main" class="container-fluid col-11 col-sm-11 col-md-9 col-xl-6  py-md-3 pl-md-5 ml-sm-auto  bd-content">
+            <h1>Your Cart:</h1>
+            <div class="table-responsive">
+                <table class="table" id="cartTable">
+                    <thead>
+                    <tr>
+                        <th colspan="2">Product</th>
+                        <th>Quantity</th>
+                        <th>Unit price</th>
+                        <th colspan="2">Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><a href="#"><img src="img/products/canon.png" alt="Canon camera"></a></td>
+                        <td><a href="#">Canon camera</a></td>
+                        <td>
+                        <input type="number" value="2" class="form-control">
+                        </td>
+                        <td>$145</td>
+                        <td></td><!-- total -->
+                        <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><img src="img/products/shampoo_PNG52.png" alt="Shampoo Elvive"></a></td>
+                        <td><a href="#">Shampoo Elvive</a></td>
+                        <td>
+                        <input type="number" value="4" class="form-control">
+                        </td>
+                        <td>$33</td>
+                        <td></td><!-- total -->
+                        <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th colspan="5">Total</th>
+                        <th colspan="2" id="totalCartPrice"></th>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>H</td>
+                    <td>r</td>
+                    <td>H</td>
+                    <td>
+                        <input name="btnDelete" id="" class="btn btn-danger" type="button" value="Remove Item">
+                    </td>
+                </tr>
+            </table> -->
+
+            <div class="d-flex justify-content-center">
+                <button type="" class="btn btn-primary" onclick="updateTablePrices()">Update Cart</button>
+                <!-- <div class="g-recaptcha" data-sitekey="6Ldja7IUAAAAANS3KVyjcl0LmgAqzWry8qBXBFgs"></div> -->
+            </div>
+
+
+        </main>
+          <!-- POSTs back to the page's URL upon submit with a g-recaptcha-response POST parameter. -->
+          <!-- <form action="?" method="POST">
+            <div id="example3"></div>
+          </form>
+          <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+              async defer>
+          </script> -->
+        <!-- mt-auto makes sure footer top margin will be full making it go to bottom of page -->
+        <footer class="footer  footer mt-sm-auto px-4">
+            <p class="lead">&copy;&nbsp;Company Name <i id="copyrightDate">2019-</i></p>
+        </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        var itemsCount = sessionStorage.getItem("cartItemNumber");
+        document.getElementById("cartItemNumber").innerHTML = itemsCount;
+
+        addYear(document.getElementById("copyrightDate"));
+        function addYear(element) {
+            var d = new Date();
+            element.innerHTML += d.getFullYear();
+        }
+
+// function g(){
+        // Get a reference to the table
+        // var tableRef = document.getElementById('table');
+        // // Insert a row at the end of the table
+        // let newRow = tableRef.insertRow(-1);
+
+        // // Insert a cell in the row at index 0
+        // let newCell = newRow.insertCell(0);
+
+        // // Append a text node to the cell
+        // let newText = document.createTextNode('New bottom row');
+        // // newCell.appendChild(newText);
+        // console.log(table.rows[2].cells[2])
+        // var customerId = parseInt($(table.rows[2].cells[2]).find("input").val());
+        // console.log(customerId)
+        // // customerId = 8;
+        // // console.log(customerId.value)
+        // // customerId.value =8;
+        // a = parseInt(table.rows[2].cells[3].innerHTML.replace('$',''));
+        // console.log($(table.rows[2].cells[3]).val())
+        // console.log(table.rows[2].cells[4].innerHTML)
+        // console.log(a * customerId )
+        // tot = a * customerId
+        // table.rows[2].cells[4].innerHTML = "$"+tot;
+        //+ "--------------" +  Function('return ' + a +"+"+ customerId)())
+        // return Function('return ' + a + customerId)();
+        // quant
+        // table.row.cells[0].innerHTML = 4;      
+        // var d = new Date()
+        // document.getElementById("copyrightDate").innerHTML += d.getFullYear();
+    // }
+    // var totalPrice = 0;
+    // $(cartTable.rows).each(function() {
+    //     // alert($(this).cells[3]);      
+    //     try{
+    //         totalPrice += cellsaaa($(this.cells))
+    //     console.log($(this.cells)[3])
+    //     console.log(totalPrice)
+    //     }catch{
+    //         console.log(totalPrice)
+    //     }
+    // });
+
+    // update table prices when it's ready
+    $(cartTable).ready(updateTablePrices())
+    /*
+        on focusIn save previous values
+        on change update the price of the cell
+        on focusOut calculate the diff between new and old cell price and updates the total price of the cart
+    */
+    $("#cartTable tr").focusin(function(){
+        // console.log(event.target.value);
+        previous = event.target.valueAsNumber; 
+        previousTotPrice = this.cells[4].value;        
+    }).change(function name(params) {
+        // console.log(event.target.value);
+        // console.log(event.cells);
+        // console.log(this.cells);
+        if(!Number(event.target.valueAsNumber) && event.target.valueAsNumber !== 0){
+                event.target.value = previous;
+        }
+        else if(event.target.value<=0)
+            event.target.valueAsNumber *= -1;
+        newTotPrice = updateCellPrice(this.cells)
+        // array[array.length - 1].cells[1].innerHTML = "$" + updateCellPrice(this.cells);
+    }).focusout(function name(params) {
+        // console.log(previous);
+        // console.log(event.target.value);
+        // console.log(previousTotPrice)
+        // console.log(newTotPrice);
+        diff = newTotPrice - previousTotPrice;
+        // console.log(diff)
+        // won't update if no price diffrence
+        if(diff !== 0)
+            updateTotalCartPrice(diff, true)
+    })
+
+//     .on('focusin', 'input', function(){
+//     console.log("Saving value " + $(this).val());
+//     $(this).data('val', $(this).val());
+// }).on('change','input', function(){
+//     var prev = $(this).data('val');
+//     var current = $(this).val();
+//     console.log("Prev value " + prev);
+//     console.log("New value " + current);
+// });
+    function updateTablePrices(){
+        var array = $(cartTable.rows)
+        var totalPrice = new Number();
+        for (let i = 1; i < array.length - 1; i++) {
+            totalPrice += updateCellPrice(array[i].cells);
+            // console.log(totalPrice);
+        }
+        // console.log(totalPrice);
+        updateTotalCartPrice(totalPrice, false);
+    }
+    //
+    function updateCellPrice(cells) {
+        var quant = parseInt($(cells[2]).find("input").val());
+        price = parseInt(cells[3].innerHTML.replace('$',''));
+        totPrice = price * quant;
+        cells[4].value = totPrice;
+        cells[4].innerHTML = "$"+totPrice;
+        return parseInt(totPrice);
+    }
+    function updateTotalCartPrice(price, booleanAdd) {
+        var totalCartPrice = document.getElementById('totalCartPrice')
+        if (booleanAdd) {
+            totalCartPrice.value += price;
+        } else {
+            totalCartPrice.value = price;
+        }
+        
+        totalCartPrice.innerHTML = "$" + totalCartPrice.value;
+    }
+    function checkBoolean(boolean) {
+        if(typeof boolean !== "boolean"){
+             console.error("booleanAdd not boolean");
+             return false;
+        }
+        return true;
+    }
+    </script>
+</body>
+</html>

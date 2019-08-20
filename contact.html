@@ -73,7 +73,7 @@
                     </li>
                 </ul>  
                 <a class="btn btn-outline-primary btn-sm ml-3" href="cart.html">
-                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-shopping-cart">Cart</i>
                     <span id="cartItemNumber" class="badge badge-pill badge-info"></span>
                 </a>
             </div>
@@ -85,21 +85,21 @@
                 <div class="form-group row">
                     <label for="inputName" class="col-sm-2">Your name</label>
                     <div class="col-sm-10">
-                        <input class="form-control" type="text" placeholder="Enter name" id="inputName" required autofocus>
+                        <input class="form-control" type="text" placeholder="How should we address you?" id="inputName" required autofocus>
                     </div>                   
                 </div>
                 <div class="form-group row">
                   <label for="inputEmail" class="col-sm-2">Your email address</label>
                   <div class="col-sm-10">
                     <input type="email" class="form-control" id="inputEmail" aria-describedby="inputEmail"
-                    placeholder="Enter email" required>
+                    placeholder="Enter your email" required>
                       <small id="emailHelp" class="form-text text-muted">We'll never share your email</small>
                   </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputMessage" class="col-sm-2">Your message</label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" rows="5" type="text" placeholder="Enter message" id="inputMessage" required></textarea>
+                        <textarea class="form-control" type="text" placeholder="Enter your message" id="inputMessage" maxlength="50" required></textarea>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center">
@@ -125,8 +125,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
-        var itemCount = sessionStorage.getItem("cartItemNumber");
-        document.getElementById("cartItemNumber").innerHTML = itemCount;
+        var itemsCount = sessionStorage.getItem("cartItemNumber");
+        document.getElementById("cartItemNumber").innerHTML = itemsCount;
 
         addYear(document.getElementById("copyrightDate"));
         function addYear(element) {

@@ -54,7 +54,7 @@
                     </li>
                 </ul>
                 <a class="btn btn-outline-primary btn-sm ml-3" href="cart.html">
-                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-shopping-cart">Cart</i>
                     <span id="cartItemNumber" class="badge badge-pill badge-info"></span>
                 </a>  
             </div>
@@ -80,8 +80,8 @@
      
     
     <script>
-        var itemCount = sessionStorage.getItem("cartItemNumber");
-        document.getElementById("cartItemNumber").innerHTML = itemCount;
+        var itemsCount = sessionStorage.getItem("cartItemNumber");
+        document.getElementById("cartItemNumber").innerHTML = itemsCount;
 
         addYear(document.getElementById("copyrightDate"));
         function addYear(element) {
