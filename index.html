@@ -46,7 +46,7 @@
                 m - margin l - left -->
                 <ul class="navbar-nav ml-auto justify-content-end">
                     <li class="nav-item ">
-                        <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link active" href="#!">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
@@ -62,15 +62,16 @@
             </div>
         </nav>
         <main role="main" class="col-11 col-sm-9 col-md-10 col-xl-10 py-3 pl-5 bd-content ml-auto">
-            <table  id="productTable" class="table w-auto table-hover table-bordered shopping-cart-wrap">
+            <div class="w-auto">
+            <table  id="productTable" class="table w-100 table-hover table-bordered shopping-cart-wrap">
                 <thead class="text-muted">
                     <tr>
-                    <th scope="col" top>Product</th>
-                    <th scope="col" width="150">Details</th>
-                    <th scope="col" width="150">Category</th>
-                    <th scope="col" width="150">Price</th>
-                    <!-- <th scope="col" width="150">Quantity</th> -->
-                    <th scope="col" >Action</th>
+                        <th scope="col" width="160">Product</th>
+                        <th scope="col" width="w-auto">Details</th>
+                        <th scope="col" width="w-auto">Category</th>
+                        <th scope="col" width="w-auto">Price</th>
+                        <!-- <th scope="col" width="150">Quantity</th> -->
+                        <th scope="col" width="160">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -93,12 +94,7 @@
                             </figcaption> 
                         </td>
                         <td>Camera</td>
-                        <td> 
-                            <!-- <div class="price-wrap"> -->
-                            145
-                                <!-- <small class="text-muted">(USD)</small>   -->  
-                            <!-- </div>  price-wrap .// -->
-                        </td>
+                        <td>$145</td>
                         <td>
                             <span class="dtr-data">
                                 <div class="input-group mb-3" style="max-width: 120px;">
@@ -136,12 +132,7 @@
                             </figcaption>
                         </td>
                         <td>Hygeine</td>
-                        <td> 
-                            <!-- <div class="price-wrap"> -->
-                            33
-                                <!-- <small class="text-muted">(USD)</small>   -->  
-                            <!-- </div>  price-wrap .// -->
-                        </td>
+                        <td>$33</td>
                         <td>
                             <span class="dtr-data">
                                 <div class="input-group mb-3" style="max-width: 120px;">
@@ -179,12 +170,7 @@
                             </figcaption>
                         </td>
                         <td>Washing Powder</td>
-                        <td> 
-                            <!-- <div class="price-wrap"> -->
-                            145 
-                                <!-- <small class="text-muted">(USD)</small>   --> 
-                            <!-- </div>  price-wrap .// -->
-                        </td>
+                        <td>$145</td>
                         <td>
                             <span class="dtr-data">
                                 <div class="input-group mb-3" style="max-width: 120px;">
@@ -222,13 +208,7 @@
                             </figcaption>
                         </td>
                         <td>Hygeine</td>
-                        <td> 
-                            <!-- <div class="price-wrap"> -->
-                            56 
-                                <!-- <small class="text-muted">(USD)</small>   -->  
-                            <!-- </div> -->
-                            <!-- price-wrap .// -->
-                        </td>
+                        <td>$56</td>
                         <td>
                             <span class="dtr-data">
                                 <div class="input-group mb-3" style="max-width: 120px;">
@@ -266,12 +246,7 @@
                             </figcaption>
                         </td>
                         <td>Washing Powder</td>
-                        <td> 
-                            <!-- <div class="price-wrap"> -->
-                            6
-                                <!-- <small class="text-muted">(USD)</small>   -->  
-                            <!-- </div>  price-wrap .// -->
-                        </td>
+                        <td>$6</td>
                         <td>
                             <span class="dtr-data">
                                 <div class="input-group mb-3" style="max-width: 120px;">
@@ -309,12 +284,7 @@
                             </figcaption>
                         </td>
                         <td>Hygeine</td>
-                        <td> 
-                            <!-- <div class="price-wrap"> -->
-                            5
-                                <!-- <small class="text-muted">(USD)</small>   -->  
-                            <!-- </div>  price-wrap .// -->
-                        </td>
+                        <td>$5</td>
                         <td>
                             <span class="dtr-data">
                                 <div class="input-group mb-3" style="max-width: 120px;">
@@ -352,12 +322,7 @@
                             </figcaption>
                         </td>
                         <td>Hygeine</td>
-                        <td> 
-                            <!-- <div class="price-wrap"> -->
-                            45
-                                <!-- <small class="text-muted">(USD)</small>   -->  
-                            <!-- </div>  price-wrap .// -->
-                        </td>
+                        <td>$45</td>
                         <td>
                             <span class="dtr-data">
                                 <div class="input-group mb-3" style="max-width: 120px;">
@@ -395,12 +360,7 @@
                             </figcaption>
                         </td>
                         <td>Hygeine</td>
-                        <td> 
-                            <!-- <div class="price-wrap"> -->
-                            13
-                                <!-- <small class="text-muted">(USD)</small>   -->  
-                            <!-- </div>  price-wrap .// -->
-                        </td>
+                        <td>$13</td>
                         <td>
                             <span class="dtr-data">
                                 <div class="input-group mb-3" style="max-width: 120px;">
@@ -420,11 +380,22 @@
                         </td>
                     </tr>
                 </tbody>
+                <tfoot class="text-muted">
+                    <tr>
+                        <th scope="col" top>Product</th>
+                        <th scope="col" width="150">Details</th>
+                        <th scope="col" width="150">Category</th>
+                        <th scope="col" width="150">Price</th>
+                        <!-- <th scope="col" width="150">Quantity</th> -->
+                        <th scope="col" >Action</th>
+                    </tr>
+                </tfoot>
             </table>
+        </div>
                 <!-- <nav aria-label="Page navigation">
                     <ul class="pagination justify-content-center">
                         <li class="page-item disabled">
-                            <span  class="page-link" href="#" aria-label="First">
+                            <span  class="page-link" href="#!" aria-label="First">
                                 <span aria-hidden="true">&laquo;</span>
                                 <span class="sr-only">First</span>
                             </span >
@@ -445,7 +416,7 @@
                              <a class="page-link" href="#!">Next</a>
                         </li>
                         <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Last Page">
+                            <a class="page-link" href="#!" aria-label="Last Page">
                                 <span aria-hidden="true">&raquo;</span>
                                 <span class="sr-only">Last Page</span>
                             </a>
@@ -483,9 +454,15 @@
         // table pagenition
         $(document).ready(function(){
             $('#productTable').dataTable({
-                responsive: true,
-                "pagingType": "full_numbers",
-                "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
+                pagingType: "full_numbers",
+                lengthMenu: [[5, 10, 25, -1], [5, 10, 25, "All"]],
+                order: [[1, 'asc']],
+                columnDefs: [
+                    { searchable: true, targets: [1, 2] },
+                    { searchable: false, targets: '_all' },
+                    { orderable: true, className: 'reorder', targets: [1, 2, 3] },
+                    { orderable: false, targets: '_all' }
+                ],
                 "preDrawCallback": function( settings ) {
                     var api = new $.fn.dataTable.Api( settings );
                     // If pagination has only one page remove it     
@@ -499,9 +476,12 @@
                     // console.log($('#productTable_wrapper').find('.dataTables_paginate'))             
                     // $('#productTable_first').remove();
                     // console.log(dataTables_paginate) 
-                },
+                },   
+                responsive: true      
             });
         });
+
+       
         /* stops working when the table is responsive and it collapsed
         // updates the total item number of cart on btnAddToCart click
         // $('.btnAddToCart').on('click', function(updateCartTotal) {
