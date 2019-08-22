@@ -72,7 +72,7 @@
                         <a class="nav-link " href="contact.html" aria-disabled="true">Contact <span class="sr-only">(current)</span></a>
                     </li>
                 </ul> 
-                <a class="btn btn-outline-primary btn-sm ml-3 active" href="#">
+                <a class="btn btn-outline-primary btn-sm ml-3 active" href="#!">
                     <i class="fas fa-shopping-cart">Cart</i>
                     <span id="cartItemNumber" class="badge badge-pill badge-info"></span>
                 </a> 
@@ -92,24 +92,24 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><a href="#"><img src="img/products/canon.png" alt="Canon camera"></a></td>
-                        <td><a href="#">Canon camera</a></td>
+                        <td><a href="#!"><img src="img/products/canon.png" alt="Canon camera"></a></td>
+                        <td><a href="#!">Canon camera</a></td>
                         <td>
                         <input type="number" value="2" class="form-control">
                         </td>
                         <td>$145</td>
                         <td></td><!-- total -->
-                        <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                        <td><a href="#!"><i class="fa fa-trash-o"></i></a></td>
                     </tr>
                     <tr>
-                        <td><a href="#"><img src="img/products/shampoo_PNG52.png" alt="Shampoo Elvive"></a></td>
-                        <td><a href="#">Shampoo Elvive</a></td>
+                        <td><a href="#!"><img src="img/products/shampoo_PNG52.png" alt="Shampoo Elvive"></a></td>
+                        <td><a href="#!">Shampoo Elvive</a></td>
                         <td>
                         <input type="number" value="4" class="form-control">
                         </td>
                         <td>$33</td>
                         <td></td><!-- total -->
-                        <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                        <td><a href="#!"><i class="fa fa-trash-o"></i></a></td>
                     </tr>
                     </tbody>
                     <tfoot>
@@ -138,7 +138,7 @@
             </table> -->
 
             <div class="d-flex justify-content-center">
-                <button type="" class="btn btn-primary" onclick="updateTablePrices()">Update Cart</button>
+                <button type="" class="btn btn-primary" onclick="updateCartTablePrices()">Update Cart</button>
                 <!-- <div class="g-recaptcha" data-sitekey="6Ldja7IUAAAAANS3KVyjcl0LmgAqzWry8qBXBFgs"></div> -->
             </div>
 
@@ -161,122 +161,79 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
-        var itemsCount = sessionStorage.getItem("cartItemNumber");
-        document.getElementById("cartItemNumber").innerHTML = itemsCount;
+    "use strict" // avoid hoisting
+    var itemsCount = sessionStorage.getItem("cartItemNumber");
+    document.getElementById("cartItemNumber").innerHTML = itemsCount;
 
-        addYear(document.getElementById("copyrightDate"));
-        function addYear(element) {
-            var d = new Date();
-            element.innerHTML += d.getFullYear();
+    addYear(document.getElementById("copyrightDate"));
+    function addYear(element) {
+        var d = new Date();
+        element.innerHTML += d.getFullYear();
         }
 
-// function g(){
-        // Get a reference to the table
-        // var tableRef = document.getElementById('table');
-        // // Insert a row at the end of the table
-        // let newRow = tableRef.insertRow(-1);
-
-        // // Insert a cell in the row at index 0
-        // let newCell = newRow.insertCell(0);
-
-        // // Append a text node to the cell
-        // let newText = document.createTextNode('New bottom row');
-        // // newCell.appendChild(newText);
-        // console.log(table.rows[2].cells[2])
-        // var customerId = parseInt($(table.rows[2].cells[2]).find("input").val());
-        // console.log(customerId)
-        // // customerId = 8;
-        // // console.log(customerId.value)
-        // // customerId.value =8;
-        // a = parseInt(table.rows[2].cells[3].innerHTML.replace('$',''));
-        // console.log($(table.rows[2].cells[3]).val())
-        // console.log(table.rows[2].cells[4].innerHTML)
-        // console.log(a * customerId )
-        // tot = a * customerId
-        // table.rows[2].cells[4].innerHTML = "$"+tot;
-        //+ "--------------" +  Function('return ' + a +"+"+ customerId)())
-        // return Function('return ' + a + customerId)();
-        // quant
-        // table.row.cells[0].innerHTML = 4;      
-        // var d = new Date()
-        // document.getElementById("copyrightDate").innerHTML += d.getFullYear();
-    // }
-    // var totalPrice = 0;
-    // $(cartTable.rows).each(function() {
-    //     // alert($(this).cells[3]);      
-    //     try{
-    //         totalPrice += cellsaaa($(this.cells))
-    //     console.log($(this.cells)[3])
-    //     console.log(totalPrice)
-    //     }catch{
-    //         console.log(totalPrice)
-    //     }
-    // });
-
-    // update table prices when it's ready
-    $(cartTable).ready(updateTablePrices())
+    // update table prices when the cartTable is ready
+    $(cartTable).ready(updateCartTablePrices())
     /*
         on focusIn save previous values
         on change update the price of the cell
         on focusOut calculate the diff between new and old cell price and updates the total price of the cart
     */
-    $("#cartTable tr").focusin(function(){
-        // console.log(event.target.value);
-        previous = event.target.valueAsNumber; 
-        previousTotPrice = this.cells[4].value;        
-    }).change(function name(params) {
-        // console.log(event.target.value);
-        // console.log(event.cells);
-        // console.log(this.cells);
-        if(!Number(event.target.valueAsNumber) && event.target.valueAsNumber !== 0){
-                event.target.value = previous;
-        }
-        else if(event.target.value<=0)
-            event.target.valueAsNumber *= -1;
-        newTotPrice = updateCellPrice(this.cells)
-        // array[array.length - 1].cells[1].innerHTML = "$" + updateCellPrice(this.cells);
-    }).focusout(function name(params) {
-        // console.log(previous);
-        // console.log(event.target.value);
-        // console.log(previousTotPrice)
-        // console.log(newTotPrice);
-        diff = newTotPrice - previousTotPrice;
-        // console.log(diff)
-        // won't update if no price diffrence
-        if(diff !== 0)
-            updateTotalCartPrice(diff, true)
-    })
+    {
+        let previous;
+        let previousTotPrice;
+        let newTotPrice;
+        $("#cartTable tr td input").focusin(function(){
+            // save starting values as previous
+            previous = this.valueAsNumber; 
+            previousTotPrice = this.parentElement.parentElement.cells[4].value;        
+        }).change(function name(params) {
+                        
+            let currentValue = this.valueAsNumber;
+            // check current value is a positive Number
+            if(!(Number(currentValue) >= 0)){           
+                if(currentValue <  0) // if current value is negative turn it to positive
+                    this.valueAsNumber *= -1;
+                else // if current value is not a number reset value to the previous value
+                    this.valueAsNumber = previous;
+            }
 
-//     .on('focusin', 'input', function(){
-//     console.log("Saving value " + $(this).val());
-//     $(this).data('val', $(this).val());
-// }).on('change','input', function(){
-//     var prev = $(this).data('val');
-//     var current = $(this).val();
-//     console.log("Prev value " + prev);
-//     console.log("New value " + current);
-// });
-    function updateTablePrices(){
-        var array = $(cartTable.rows)
-        var totalPrice = new Number();
+            // update the total price of current cell
+            newTotPrice = updateCellPrice(this.parentElement.parentElement.cells)
+        }).focusout(function name(params) {
+            // on finish save the diffrence in the prices
+            let diff = newTotPrice - previousTotPrice;
+            // if there wasn a price change updating adding the diff to total of the cart
+            if(diff !== 0)
+                updateTotalCartPrice(diff, true)
+        })
+    }
+    // updating prices of the all cart table
+    function updateCartTablePrices(){
+        let array = $(cartTable.rows)
+        let totalPrice = new Number();
+        // updating all the item rows prices except the header(0) and total row(last row)
         for (let i = 1; i < array.length - 1; i++) {
+            // saving prices of all items
             totalPrice += updateCellPrice(array[i].cells);
-            // console.log(totalPrice);
         }
-        // console.log(totalPrice);
+        // setting total cart price to the total sum of all items
         updateTotalCartPrice(totalPrice, false);
     }
-    //
+    // update price of the total cell in a row
     function updateCellPrice(cells) {
-        var quant = parseInt($(cells[2]).find("input").val());
-        price = parseInt(cells[3].innerHTML.replace('$',''));
-        totPrice = price * quant;
+        let quant = $(cells[2]).find("input").val();
+        // remove char to parse the price to int
+        let price = parseInt(cells[3].innerHTML.replace('$',''));
+        let totPrice = price * quant;
+        // save cell value
         cells[4].value = totPrice;
         cells[4].innerHTML = "$"+totPrice;
         return parseInt(totPrice);
     }
+    // set a new total price or adds a price to the current total
     function updateTotalCartPrice(price, booleanAdd) {
         var totalCartPrice = document.getElementById('totalCartPrice')
+        // add price to total else set price as new total
         if (booleanAdd) {
             totalCartPrice.value += price;
         } else {
@@ -285,6 +242,8 @@
         
         totalCartPrice.innerHTML = "$" + totalCartPrice.value;
     }
+    /*
+    // might turn this into an error function but no use for now
     function checkBoolean(boolean) {
         if(typeof boolean !== "boolean"){
              console.error("booleanAdd not boolean");
@@ -292,6 +251,7 @@
         }
         return true;
     }
+    */
     </script>
 </body>
 </html>
